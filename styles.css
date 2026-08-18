@@ -1,0 +1,96 @@
+/* Simple responsive styles */
+:root{--bg:#f7f7f9;--accent:#1e88e5;--text:#222}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;color:var(--text);margin:0;background-color:var(--bg);background-image:url('stáhnout.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.site-header{background:#fff;border-bottom:1px solid #e6e6e9}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{margin:0;font-size:1.1rem}
+.nav{display:flex;gap:1rem}
+.nav a{text-decoration:none;color:var(--text)}
+.nav-toggle{display:none;border:0;background:transparent;font-size:1.4rem}
+.lang-container{position:relative}
+.lang-toggle{border:0;background:#fff;padding:.25rem .5rem;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:.35rem}
+.lang-toggle .lang-icon{font-size:1.05rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.lang-dropdown{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #e6e6e9;border-radius:8px;list-style:none;margin:0;padding:.25rem 0;min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.08);opacity:0;transform:translateY(-6px);visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s}
+.lang-dropdown.open{opacity:1;transform:translateY(0);visibility:visible;pointer-events:auto}
+.lang-dropdown li{padding:.45rem .9rem;cursor:pointer}
+.lang-dropdown li:hover{background:#f2f6fb}
+.lang-dropdown li .flag{margin-right:.6rem;display:inline-block;width:26px;height:18px;object-fit:cover;border-radius:3px}
+.lang-dropdown li.selected{background:linear-gradient(90deg,rgba(30,136,229,0.08),rgba(30,136,229,0.02));font-weight:600}
+.lang-toggle .lang-icon{width:22px;height:16px;display:inline-block;border-radius:3px}
+
+/* Buy button */
+.buy-btn{display:inline-block;margin-left:.6rem;padding:.25rem .5rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-weight:600}
+.buy-btn:hover{filter:brightness(.95)}
+.hero{padding:4rem 0;text-align:center}
+.hero h2{margin:.2rem 0;font-size:2rem}
+.divider{height:1px;background:#e6e6e9;border:0;margin:.6rem 0 1rem}
+.offers-page{color:#fff;background-position:center 30%;background-size:cover;background-repeat:no-repeat}
+.offers-page a{color:#9fd3ff}
+.offers-page .site-footer{color:rgba(255,255,255,0.8)}
+.offers-page .buy-btn{background:#2b9af3}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem 0}
+
+/* Image fill for text (uses provided wallpaper file). Falls back to white when unsupported. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)){
+  .offers-page .image-text{
+    background-image: url('Deep Purple Glitter Fluid Art Phone Wallpaper _ Dark Amethyst Background.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)){
+  .offers-page .image-text{
+    color: #fff;
+    background: none;
+  }
+}
+
+/* Revert image-fill to solid white on offers page and make header transparent */
+.offers-page .image-text{
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.offers-page .site-header{
+  background: transparent !important;
+  border-bottom: none !important;
+}
+.offers-page .site-header .container{background:transparent}
+.offers-page .nav a{color:rgba(255,255,255,0.95)}
+.offers-page .logo{color:#fff}
+.offers-page .lang-toggle{background:rgba(255,255,255,0.06);border:0}
+
+/* Dark theme for language dropdown on offers page */
+.offers-page .lang-dropdown{
+  background: rgba(0,0,0,0.92);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.offers-page .lang-dropdown li{
+  color: #fff;
+}
+.offers-page .lang-dropdown li:hover{
+  background: rgba(255,255,255,0.04);
+}
+.offers-page .lang-dropdown li .flag{
+  filter: none; /* keep flags visible */
+}
+.offers article{background:#fff;padding:1rem;border-radius:6px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.site-footer{padding:1rem 0;text-align:center;font-size:.9rem;color:#666}
+.cta{display:inline-block;padding:.5rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+@media(max-width:700px){
+  .nav{display:none;flex-direction:column}
+  .nav-toggle{display:block}
+  .offers{grid-template-columns:1fr}
+  .site-header .container{gap:.5rem}
+}

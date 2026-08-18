@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Website Only</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Website Only</h1>
+      <nav class="nav" id="nav">
+        <a href="#" data-i18n="nav_home">Home</a>
+        <a href="offers/index.html" target="_blank" rel="noopener">Offers</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <div class="lang-container">
+            <button id="langToggle" class="lang-toggle" aria-haspopup="true" aria-expanded="false">
+              <img class="lang-icon" src="assets/flags/en.svg" alt="language"/>
+              <span class="sr-only">Language</span>
+            </button>
+            <ul id="langDropdown" class="lang-dropdown" role="menu" aria-hidden="true">
+            <li data-lang="en"><img class="flag" src="assets/flags/en.svg" alt="US flag"/> English</li>
+            <li data-lang="cz"><img class="flag" src="assets/flags/cz.svg" alt="CZ flag"/> Čeština</li>
+            <li data-lang="es"><img class="flag" src="assets/flags/es.svg" alt="ES flag"/> Español</li>
+            <li data-lang="fr"><img class="flag" src="assets/flags/fr.svg" alt="FR flag"/> Français</li>
+            <li data-lang="de"><img class="flag" src="assets/flags/de.svg" alt="DE flag"/> Deutsch</li>
+            <li data-lang="it"><img class="flag" src="assets/flags/it.svg" alt="IT flag"/> Italiano</li>
+            <li data-lang="pt"><img class="flag" src="assets/flags/pt.svg" alt="PT flag"/> Português</li>
+            <li data-lang="ru"><img class="flag" src="assets/flags/ru.svg" alt="RU flag"/> Русский</li>
+            <li data-lang="zh"><img class="flag" src="assets/flags/zh.svg" alt="CN flag"/> 中文</li>
+            <li data-lang="ja"><img class="flag" src="assets/flags/ja.svg" alt="JP flag"/> 日本語</li>
+          </ul>
+        </div>
+      </nav>
+      <button id="navToggle" class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2 data-i18n="hero_h2">Simple, static website</h2>
+        <p data-i18n="hero_p">A minimal, website-only project scaffold ready to customize.</p>
+        <p><a class="cta" href="offers/index.html" target="_blank" rel="noopener" data-i18n="cta">See offers</a></p>
+      </div>
+    </section>
+
+    <section id="offers" class="container offers">
+      <article>
+        <h3 data-i18n="offers_0_title">Fast</h3>
+        <p data-i18n="offers_0_text">Lightweight static HTML/CSS/JS that loads instantly.</p>
+      </article>
+      <article>
+        <h3 data-i18n="offers_1_title">Portable</h3>
+        <p data-i18n="offers_1_text">Open directly in a browser or serve with any static host.</p>
+      </article>
+      <article>
+        <h3 data-i18n="offers_2_title">Customizable</h3>
+        <p data-i18n="offers_2_text">Easy to extend with new pages, assets, or frameworks.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3 data-i18n="contact_h3">Contact</h3>
+      <p data-i18n="contact_email">Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" data-i18n="footer">© 2026 Website Created by Alvera Services. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
